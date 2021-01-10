@@ -1,0 +1,19 @@
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+ErrorDocument 403 /403.html
+
+
+RewriteEngine On
+
+RewriteBase /
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.gabrielajavier.com/$1 [R,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+<FilesMatch "\.(css|js|ico|pdf|flv|jpg|jpeg|png|gif|swf|mp3|mp4)$">
+    Header set Cache-Control "public"
+    Header set Expires "Thu, 15 Apr 2020 20:00:00 GMT"
+</FilesMatch>
