@@ -322,10 +322,6 @@ w_widgetWhatsapp{
   top: 50%;
   z-index: 1000; }
 
-.fv li:first-child{
-  display: none;
-}
-
 .fv li {
   display: block;
   height: 25px;
